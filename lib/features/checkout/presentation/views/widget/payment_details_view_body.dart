@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payment_app/core/widget/custom_button.dart';
 import 'package:payment_app/features/checkout/presentation/views/widget/payment_method_listview.dart';
 
+import '../thank_you_view.dart';
 import 'custom_credit_card.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
@@ -39,6 +40,10 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
 
                         }
                         else{
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const ThankYouView();
+                          }));
                           autovalidateMode=AutovalidateMode.always;
                           setState(() {
 
