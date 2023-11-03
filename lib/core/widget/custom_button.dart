@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, this.onTap}) : super(key: key);
+  const CustomButton({Key? key, this.onTap, required this.text}) : super(key: key);
 final Function()? onTap;
+final String text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,9 +19,9 @@ final Function()? onTap;
             borderRadius: BorderRadius.circular(15),
           ),
         ),
-        child: const Center(
+        child:  Center(
           child: Text(
-              'Complete Payment',
+              text,
               textAlign: TextAlign.center,
               style: Styles.style22
           ),
