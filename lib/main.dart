@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 import 'features/checkout/presentation/views/my_cart_view.dart';
 
@@ -16,3 +17,5 @@ class CheckOutApp extends StatelessWidget {
     );
   }
 }
+
+
