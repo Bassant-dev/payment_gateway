@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, this.onTap, required this.text}) : super(key: key);
+  const CustomButton({Key? key, this.onTap, required this.text,  this.isLoading= false}) : super(key: key);
 final Function()? onTap;
 final String text;
+final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,7 +21,7 @@ final String text;
           ),
         ),
         child:  Center(
-          child: Text(
+          child: isLoading? const CircularProgressIndicator(color: Colors.white,):Text(
               text,
               textAlign: TextAlign.center,
               style: Styles.style22

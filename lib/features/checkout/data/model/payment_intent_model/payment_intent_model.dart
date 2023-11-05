@@ -27,7 +27,7 @@ class PaymentIntentModel {
   Null? paymentMethod;
   Null? paymentMethodConfigurationDetails;
   PaymentMethodOptions? paymentMethodOptions;
-  List<String>? paymentMethodTypes;
+  List<dynamic>? paymentMethodTypes;
   Null? processing;
   Null? receiptEmail;
   Null? review;
@@ -46,7 +46,6 @@ class PaymentIntentModel {
     object = json['object'];
     amount = json['amount'];
     amountCapturable = json['amount_capturable'];
-    amountDetails = json['amount_details'] != null ? new AmountDetails.fromJson(json['amount_details']) : null;
     amountReceived = json['amount_received'];
     application = json['application'];
     applicationFeeAmount = json['application_fee_amount'];
@@ -64,12 +63,12 @@ class PaymentIntentModel {
     lastPaymentError = json['last_payment_error'];
     latestCharge = json['latest_charge'];
     livemode = json['livemode'];
-    metadata = json['metadata'] != null ? new Metadata.fromJson(json['metadata']) : null;
+
     nextAction = json['next_action'];
     onBehalfOf = json['on_behalf_of'];
     paymentMethod = json['payment_method'];
     paymentMethodConfigurationDetails = json['payment_method_configuration_details'];
-    paymentMethodOptions = json['payment_method_options'] != null ? new PaymentMethodOptions.fromJson(json['payment_method_options']) : null;
+
     paymentMethodTypes = json['payment_method_types'].cast<String>();
     processing = json['processing'];
     receiptEmail = json['receipt_email'];
@@ -141,10 +140,6 @@ class AmountDetails {
 
   AmountDetails({this.tip});
 
-  AmountDetails.fromJson(Map<String, dynamic> json) {
-    tip = json['tip'] != null ? new Tip.fromJson(json['tip']) : null;
-  }
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.tip != null) {
@@ -159,8 +154,6 @@ class Tip {
 
   //Tip({});
 
-Tip.fromJson(Map<String, dynamic> json) {
-}
 
 Map<String, dynamic> toJson() {
   final Map<String, dynamic> data = new Map<String, dynamic>();
