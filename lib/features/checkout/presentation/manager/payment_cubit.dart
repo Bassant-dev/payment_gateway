@@ -21,6 +21,7 @@ class PaymentCubit extends Cubit<PaymentState> {
 
     data.fold(
           (l) => emit(PaymentFailure(l.errMessage)),
+
           (r) => emit(
         PaymentSuccess(),
       ),
